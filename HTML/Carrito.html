@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Carrito de Helados</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/MainStyle.css">
+    <link rel="stylesheet" href="../CSS/NavbarStyle.css">
+    <link rel="stylesheet" href="../CSS/CarritoStyle.css">
+</head>
+<body>
+
+        <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="../Index.html" class="nav-link"><i class="bi bi-house"></i><span>Inicio</span></a>
+            <a href="../HTML/Sabores.html" class="nav-link"><i class="bi bi-cup-straw"></i><span>Sabores</span></a>
+            <a href="../HTML/Promos.html" class="nav-link"><i class="bi bi-tag"></i><span>Promos</span></a>
+            <a href="../HTML/Ubicacion.html" class="nav-link"><i class="bi bi-geo-alt"></i><span>Ubicación</span></a>
+            <a href="../HTML/Contacto.html" class="nav-link"><i class="bi bi-envelope"></i><span>Contacto</span></a>
+            <a href="./Carrito.html" class="nav-link nav-car nav-inicio"><i class="bi bi-cart"></i><span>Carrito</span></a>
+        </div>
+    </nav>
+
+    <div class="contenedor-carrito">
+        <h1>Tu Carrito 🍦</h1>
+        
+        <div id="lista-productos">
+
+        </div>
+
+        <div class="resumen-compra">
+            <div class="fila-total">
+                <span>Total a pagar:</span>
+                <strong id="total-final">$0.00</strong>
+            </div>
+            <div class="acciones">
+                <a href="./Sabores.html" class="btn-secundario">Seguir Comprando</a>
+                <button class="btn-primario" onclick="finalizarCompra()">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+<div id="modal-pago" class="modal-personalizado" style="display: none;">
+    <div class="card-pago">
+        <h2>Finalizar Pago 💳</h2>
+        <form id="form-pago">
+            <input type="text" id="nombre-cliente" placeholder="Nombre completo" required>
+            <input type="email" id="correo-cliente" placeholder="Correo electrónico" required>
+            <div class="datos-tarjeta">
+                <input type="text" id="num-tarjeta" placeholder="Número de tarjeta" maxlength="16" required>
+                <div class="fila-input">
+                    <input type="text" id="exp-tarjeta" placeholder="MM/YY" maxlength="5" required>
+                    <input type="password" id="cvv-tarjeta" placeholder="CVV" maxlength="3" required>
+                </div>
+            </div>
+            <div class="botones-pago">
+                <button type="button" class="btn-secundario" onclick="cerrarModal()">Cancelar</button>
+                <button type="submit" class="btn-primario">Confirmar y Descargar Recibo</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Librería jsPDF (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="../JS/Carrito.js"></script>
+</body>
+</html>

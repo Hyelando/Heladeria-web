@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería Dulce Frío</title>
+     <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/NavbarStyle.css">
+    <link rel="stylesheet" href="../CSS/PromosStyle.css">
+</head>
+
+<body class="promos-page ">
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="../Index.html" class="nav-link"><i class="bi bi-house"></i><span>Inicio</span></a>
+            <a href="../HTML/Sabores.html" class="nav-link"><i class="bi bi-cup-straw"></i><span>Sabores</span></a>
+            <a href="../HTML/Promos.html" class="nav-link nav-inicio"><i class="bi bi-tag"></i><span>Promos</span></a>
+            <a href="../HTML/Ubicacion.html" class="nav-link"><i class="bi bi-geo-alt"></i><span>Ubicación</span></a>
+            <a href="../HTML/Contacto.html" class="nav-link"><i class="bi bi-envelope"></i><span>Contacto</span></a>
+            <a href="./Carrito.html" class="nav-link nav-car"><i class="bi bi-cart"></i><span>Carrito</span></a>
+        </div>
+    </nav>
+
+
+    <div class="hero">
+        <img src="../Imagenes/Main/Carousel1.png" class="carousel-img" alt="Slide 1">
+        <img src="../Imagenes/Main/Carousel2.png" class="carousel-img" alt="Slide 2">
+        <img src="../Imagenes/Main/Carousel3.png" class="carousel-img" alt="Slide 3">
+        <div class="hero-text">¡Refresca tu día!</div>
+    </div>
+
+    <div class="contenedor">
+
+
+        <section class="promos">
+            <h2 class="titulo-promos">OFERTAS HELADAS DE LA SEMANA</h2>
+
+            <br><br>
+
+
+            <div class="promos-grid">
+
+                <div class="promo-card">
+                    <img src="../Imagenes/Gallery/Promos/Promo1.jpg">
+                    <h3>MegaLunes Cremoso</h3>
+                    <p>Empieza tu semana con un litro de felicidad</p>
+                    <div class="contador" id="lunes"></div>
+
+                    <button class="btn-oferta" data-dia="1" data-titulo="MegaLunes Cremoso 🍦" data-desc="Llévate 1 litro de helado por solo $3.50 (antes $7.00) 
+                      + topping GRATIS. ¡Aprovecha esta promo exclusiva de lunes!"
+                        data-img="../Imagenes/Gallery/Promos/Promo1.jpg">
+                        Ver oferta
+                    </button>
+                </div>
+
+                <div class="promo-card">
+                    <img src="../Imagenes/Gallery/Promos/Promo2.jpg">
+                    <h3>Kayamasu Paleta Fest</h3>
+                    <p>Martes de colores, martes de paletas.</p>
+                    <div class="contador" id="martes"></div>
+
+                    <button class="btn-oferta" data-dia="2" data-titulo="🌈 Kayamasu Paleta Fest"
+                        data-desc="3 paletas por solo $2.00 (antes $3.00). Refresca tu martes con sabores únicos."
+                        data-img="../Imagenes/Gallery/Promos/Promo2.jpg">
+                        Ver oferta
+                    </button>
+                </div>
+
+                <div class="promo-card">
+                    <img src="../Imagenes/Gallery/Promos/Promo3.jpg">
+                    <h3>Kayamasu Cremoso</h3>
+                    <p>Convierte tu miércoles en una fiesta de 4 sabores.</p>
+                    <div class="contador" id="miercoles"></div>
+
+                    <button class="btn-oferta" data-dia="3" data-titulo="Kayamasu Cremoso🍨 "
+                        data-desc="Disfruta 4 sabores en un solo combo por $4.50 (antes $6.00). ¡Haz tu miércoles especial!"
+                        data-img="../Imagenes/Gallery/Promos/Promo3.jpg">
+                        Ver oferta
+                    </button>
+                </div>
+
+                <div class="promo-card">
+                    <img src="../Imagenes/Gallery/Promos/Promo4.jpg">
+                    <h3>Jueves 2x3 Fest</h3>
+                    <p>Pagas 2 y disfrutas 3.</p>
+                    <div class="contador" id="jueves"></div>
+
+                    <button class="btn-oferta" data-dia="4" data-titulo="2x3 Fest 🔥 "
+                        data-desc="Lleva 3 helados y paga solo 2. Ahorra hasta $2.50 en esta promo exclusiva de jueves."
+                        data-img="../Imagenes/Gallery/Promos/Promo4.jpg">
+                        Ver oferta
+                    </button>
+                </div>
+
+                <div class="promo-card">
+                    <img src="../Imagenes/Gallery/Promos/Promo5.jpg">
+                    <h3>Viernes de uva</h3>
+                    <p>Cono triple a mitad de precio.</p>
+                    <div class="contador" id="viernes"></div>
+
+                    <button class="btn-oferta" data-dia="5" data-titulo="Viernes de Uva 🍇"
+                        data-desc=" Cono triple de uva por solo $2.50 (antes $4.00). Dulzura irresistible para tu viernes."
+                        data-img="../Imagenes/Gallery/Promos/Promo5.jpg">
+                        Ver oferta
+                    </button>
+                </div>
+
+                <div class="promo-card">
+                    <img src="../Imagenes/Gallery/Promos/Promo6.jpg">
+                    <h3>Sábado de doble dulzura</h3>
+                    <p>Disfruta el doble por el precio de uno.</p>
+                    <div class="contador" id="sabado"></div>
+                    <button class="btn-oferta" data-dia="6" data-titulo="Sábado de Doble Dulzura🍦 "
+                        data-desc="2 helados por solo $3.00 (antes $5.00). Comparte o disfruta el doble este sábado."
+                        data-img="../Imagenes/Gallery/Promos/Promo6.jpg">
+                        Ver oferta
+                    </button>
+                </div>
+
+            </div>
+        </section>
+ 
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="cerrar">&times;</span>
+                <img id="modal-img">
+                <h3 id="modal-titulo"></h3>
+                <p id="modal-desc"></p>
+                <div class="compra-modal">
+    <div class="selector-cantidad">
+        <button type="button" class="btn-control" onclick="cambiarCantidad(-1)">−</button>
+        <input type="number" id="cantidad-oferta" value="1" min="1" max="10" readonly>
+        <button type="button" class="btn-control" onclick="cambiarCantidad(1)">+</button>
+    </div>
+    <button class="btn-añadir-carrito">Añadir al carrito 🛒</button></div>
+            </div>
+        </div>
+        <script src="../JS/promos.js"></script>
+        </div>
+
+     <footer class="footer-simple">
+        <div class="footer-content">
+            <span>© 2026 <strong>Heladería Dulce Frío</strong></span>
+ 
+            <div class="footer-socials">
+                <span>Síguenos:</span>
+                <a href="https://www.facebook.com/profile.php?id=61567703081672" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/kayamasu.official?utm_source=qr&igsh=d2txc2NvM2Z6ZHhi " target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+ 
+                   <a href="https://api.whatsapp.com/send/?phone=50368226172&text=Hola%20quisiera%20más%20información%20sobre%20las%20promociones" target="_blank">
+                    <i class="bi bi-whatsapp my-float"   ></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+       
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/NavbarStyle.css">
+    <link rel="stylesheet" href="../CSS/SaboresVarios.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../Index.html" class="nav-link"><i class="bi bi-house"></i><span>Inicio</span></a>
+            <a href="./Sabores.html" class="nav-link nav-inicio"><i class="bi bi-cup-straw"></i><span>Sabores</span></a>
+            <a href="./Promos.html" class="nav-link"><i class="bi bi-tag"></i><span>Promos</span></a>
+            <a href="./Ubicacion.html" class="nav-link"><i class="bi bi-geo-alt"></i><span>Ubicación</span></a>
+            <a href="./Contacto.html" class="nav-link"><i class="bi bi-envelope"></i><span>Contacto</span></a>
+            <a href="./Carrito.html" class="nav-link nav-car"><i class="bi bi-cart"></i><span>Carrito</span></a>
+        </div>
+    </nav>
+
+    <div class="contenedor">
+
+        <!-- Ruta -->
+        <p class="ruta">
+            <a href="../Index.html">Inicio</a> /
+            <a href="Sabores.html">Sabores</a> /
+            <span id="rutaProducto"></span>
+        </p>
+
+        <div class="detalle">
+
+            <!-- Imagen -->
+            <div class="imagen">
+                <img id="imagen">
+            </div>
+
+            <!-- Información -->
+            <div class="info">
+                <h1 id="titulo"></h1>
+                <p id="descripcion"></p>
+                <p class="categoria">Categoría: <span>Sabores</span></p>
+                
+                <!-- Botón configurado como el de tu compañera -->
+                <button type="button" class="btn-realizar-compra btn-oferta-personalizada">
+                    Realizar una compra
+                </button>
+            </div>
+        </div>
+
+        <!-- Valoraciones -->
+        <section class="valoraciones">
+
+            <h2>Valoraciones (<span id="contador">0</span>)</h2>
+
+            <p>No hay valoraciones aún.</p>
+            <p>Sé el primero en valorar el sabor <span id="tituloValoracion"></span></p>
+            <p class="nota">Tu correo electrónico no será publicado. Los campos obligatorios están marcados con *</p>
+
+            <form id="formComentario">
+
+                <textarea id="comentario" placeholder="Tu valoración *" required></textarea>
+
+                <input type="text" id="nombre" placeholder="Nombre *" required>
+
+                <input type="email" id="correo" placeholder="Correo electrónico *" required>
+
+                <label class="check">
+                    <input type="checkbox">
+                    Guardar mi nombre, correo electrónico y web en este navegador para la próxima vez que comente.
+                </label>
+
+                <button type="submit">Enviar</button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <!-- Productos relacionados -->
+    <div class="contenedor">
+        <h2 class="relacionados-titulo">Productos relacionados</h2>
+
+        <div class="relacionados" id="relacionados"></div>
+
+    </div>
+
+    <!-- SCRIPT PRODUCTO -->
+    <script src="../JS/Producto.js" defer></script>
+
+    <!-- FOOTER -->
+     <footer class="footer-simple">
+        <div class="footer-content">
+            <span>© 2026 <strong>Heladería Dulce Frío</strong></span>
+ 
+            <div class="footer-socials">
+                <span>Síguenos:</span>
+                <a href="https://www.facebook.com/profile.php?id=61567703081672" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/kayamasu.official?utm_source=qr&igsh=d2txc2NvM2Z6ZHhi " target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+ 
+                   <a href="https://api.whatsapp.com/send/?phone=50368226172&text=Hola%20quisiera%20más%20información%20sobre%20los%20productos" target="_blank">
+                    <i class="bi bi-whatsapp my-float"   ></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+<div id="modalCompra" class="modal">
+    <div class="modal-content card-personalizada">
+        <span class="cerrar-modal">&times;</span>
+        
+        <div class="tab-bar">
+            <button type="button" class="tab-btn active" onclick="cambiarTab(event, 'conos')">Conos</button>
+            <button type="button" class="tab-btn" onclick="cambiarTab(event, 'litros')">Litros / Galón</button>
+        </div>
+
+        <div class="modal-flex">
+            <div class="modal-img-container">
+                <img src="../Imagenes/cono-helado.jpg" id="img-modal-compra">
+            </div>
+
+            <div class="modal-datos">
+                <div>
+                    <h3 id="modal-titulo-sabor">Banana Fresa</h3>
+                    
+                    <div class="opcion-grupo">
+                        <label>Tamaño:</label>
+                        <select id="select-tamano" onchange="calcularPrecio()">
+                            <option value="1.00">Pequeño ($1.00)</option>
+                            <option value="1.50">Mediano ($1.50)</option>
+                            <option value="2.00">Grande ($2.00)</option>
+                        </select>
+                    </div>
+
+                    <div class="opcion-grupo">
+                        <label>Calidad:</label>
+                        <select id="select-calidad" onchange="calcularPrecio()">
+                            <option value="1">Normal</option>
+                            <option value="1.25">Premium</option>
+                            <option value="1.50">Super Premium</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="opcion-grupo">
+                        <label>Cantidad:</label>
+                        <div class="selector-cantidad">
+                        <button type="button" class="btn-control" onclick="cambiarCantidadModal(-1)">−</button>
+                        <input type="number" id="cantidad-modal" value="1" readonly>
+                        <button type="button" class="btn-control" onclick="cambiarCantidadModal(1)">+</button>
+                        </div>
+                    </div>
+                    <div class="precio-final">
+                        Total: <strong id="precio-display">$1.00</strong>
+                    </div>
+
+                    <button class="btn-AgregarCarrito" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

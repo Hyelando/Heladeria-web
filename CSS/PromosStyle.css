@@ -1,0 +1,383 @@
+body {
+    margin: 2px;
+    font-family: Helvetica;
+    background-color: #fff5f7;
+}
+footer {
+    background-color: #ff4d6d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-family: Georgia, serif;
+}
+
+.hero {
+    position: relative; 
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 45px;
+    text-shadow: 2px 2px 5px black;
+    overflow: hidden;
+    background-color: #000;
+    font-family: Georgia, serif;
+    animation: fadeInUp 1s ease-out;
+}
+
+.carousel-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: carouselAnim 12s infinite; 
+}
+
+.carousel-img:nth-child(2) { animation-delay: 4s; }
+.carousel-img:nth-child(3) { animation-delay: 8s; }
+
+.hero-text {
+    z-index: 10;
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes carouselAnim {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    30% { opacity: 1; } 
+    35% { opacity: 0; } 
+    100% { opacity: 0; } 
+}
+
+.footer-simple {
+    background-color: #ff4d6d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: Georgia, serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-socials a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
+
+.footer-socials-pink {
+    display: flex;
+    gap: 10px;
+     justify-content: center;
+}
+ 
+.footer-socials-pink a {
+    color: pink;
+    text-decoration: none;
+    font-size: 60px;
+    transition: 0.5s;
+}
+ 
+.footer-socials-pink a:hover {
+    transform: translateY(-5px);
+    color: hotpink;
+}
+/* sección promos */
+.promos {
+    animation: fadeInUp 1s ease-out;
+    padding: 40px 60px; /* espacio interno arriba/abajo 40px, izquierda/derecha 60px */
+    text-align: center; /* centra el contenido horizontalmente */
+    background: #f8f9fa; /* color de fondo gris muy claro */
+}
+
+/* titulo animado */
+.titulo-promos {
+    position: relative; /* permite posicionar elementos internos respecto a este */
+    display: inline-block; /* hace que el elemento se comporte como bloque en línea */
+    animation: flotar 3s ease-in-out infinite; /* aplica animación de movimiento vertical */
+}
+.titulo-promos::after {
+    content: ""; /* crea un elemento decorativo vacío */
+    position: absolute; /* se posiciona respecto al padre */
+    left: 0; /* inicia desde la izquierda */
+    bottom: -8px; /* se coloca debajo del texto */
+    width: 0; /* inicia sin ancho */
+    height: 3px; /* grosor de la línea */
+    background: #ff4d6d; /* color de la línea */
+    animation: linea 1s ease forwards; /* anima la línea para que crezca */
+}
+/* animación de la línea */
+@keyframes linea {
+    to {
+        width: 100%; /* la línea se expande completamente */
+    }
+}
+/* animación de flotación */
+@keyframes flotar {
+    0% {
+        transform: translateY(0); /* posición inicial */
+    }
+    50% {
+        transform: translateY(-5px); /* sube ligeramente */
+    }
+    100% {
+        transform: translateY(0); /* vuelve a la posición original */
+    }
+}
+/* grid */
+.promos-grid {
+    display: grid; /* activa el sistema de grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 25px; /* espacio entre elementos */
+}
+/* card */
+.promo-card {
+    background: white; /* fondo blanco */
+    border-radius: 15px; /* bordes redondeados */
+    overflow: hidden; /* oculta contenido que sobresale */
+    transition: all 0.3s ease; /* animación suave en cambios */
+    display: flex; /* usa flexbox */
+    flex-direction: column; /* organiza elementos en columna */
+    width: 100%; /* ocupa todo el ancho disponible */
+    height: auto; /* altura automática */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* sombra suave */
+}
+/* hover card */
+.promo-card:hover {
+    transform: translateY(-8px); /* levanta la tarjeta al pasar el mouse */
+    border: 1px solid #ff4d6d; /* agrega borde rosado */
+    box-shadow: 0px 10px 25px rgba(255, 77, 109, 0.3); /* sombra más intensa */
+}
+/* imagen */
+.promo-card img {
+    width: 100%; /* ocupa todo el ancho */
+    height: 350px; /* altura fija */
+    object-fit: cover; /* ajusta la imagen sin deformarla */
+}
+/* titulo */
+.promo-card h3 {
+    margin: 15px 10px 5px; /* espacio alrededor del título */
+    font-family: Georgia, serif; /* fuente diferente para estilo */
+    font-style: italic; /* texto en cursiva */
+    font-size: 1.2rem; /* tamaño del texto */
+}
+/* descripcion */
+.promo-card p {
+    padding: 0 15px 15px; /* espacio interno */
+    font-size: 0.9rem; /* tamaño de texto pequeño */
+    color: #555; /* color gris oscuro */
+    flex-grow: 1; /* ocupa el espacio restante dentro del flex */
+}
+/* boton */
+.promo-card button {
+    margin: 10px; /* espacio externo */
+    padding: 10px; /* espacio interno */
+    border: none; /* elimina borde */
+    background: #ff4d6d; /* color de fondo */
+    color: white; /* texto blanco */
+    border-radius: 8px; /* bordes redondeados */
+    cursor: pointer; /* cambia el cursor a mano */
+    transition: 0.3s; /* animación suave */
+}
+.promo-card button:hover {
+    background: #e63b5c; /* cambia color al pasar el mouse */
+}
+/* responsive */
+
+/* tablets */
+@media (max-width: 992px) {
+    .promos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+/* celulares */
+@media (max-width: 600px) {
+    .promos-grid {
+        grid-template-columns: 1fr; /* 1 sola columna */
+    }
+
+    .promos{
+        padding: 40px 20px; /* reduce padding */
+    }
+
+    .modal{
+        padding: 40px 20px; /* ajusta modal */
+    }
+} 
+
+/* contador */
+.contador {
+    margin: 10px; /* espacio externo */
+    padding: 10px; /* espacio interno */
+    background: #000; /* fondo negro */
+    color: #fff; /* texto blanco */
+    border-radius: 10px; /* bordes redondeados */
+    font-size: 0.9rem; /* tamaño del texto */
+    font-weight: bold; /* texto en negrita */
+    text-align: center; /* centra el texto */
+    letter-spacing: 1px; /* separa las letras */
+    transition: 0.3s; /* animación suave */
+}
+/* alerta contador */
+.contador.urgente {
+    background: #ff4d6d; /* cambia fondo a rosado */
+    animation: parpadeo 1s infinite; /* aplica animación de parpadeo */
+}
+@keyframes parpadeo {
+    0% {
+        opacity: 1; /* completamente visible */
+    }
+    50% {
+        opacity: 0.6; /* semitransparente */
+    }
+    100% {
+        opacity: 1; /* vuelve a visible */
+    }
+}
+/* modal */
+.modal {
+    display: none; /* oculto por defecto */
+    position: fixed; /* se fija en pantalla */
+    z-index: 999; /* se coloca encima de otros elementos */
+    left: 0; /* alineado a la izquierda */
+    top: 0; /* alineado arriba */
+    width: 100%; /* ocupa todo el ancho */
+    height: 100%; /* ocupa toda la altura */
+    background: rgba(0, 0, 0, 0.6); /* fondo oscuro semitransparente */
+}
+.modal-content {
+    background: white; /* fondo blanco */
+    margin: 10% auto; /* centrado vertical y horizontal */
+    padding: 20px; /* espacio interno */
+    width: 90%; /* ancho relativo */
+    max-width: 350px; /* ancho máximo */
+    border-radius: 15px; /* bordes redondeados */
+    text-align: center; /* centra contenido */
+    animation: aparecer 0.3s ease; /* animación de entrada */
+    position: relative; /* referencia para elementos internos */
+}
+.modal-content h3 {
+    font-weight: 500; /* grosor medio */
+    font-size: 1.6rem; /* tamaño del texto */
+    color: #222; /* color oscuro */
+    text-shadow: none; /* sin sombra */
+}
+.modal-content p {
+    font-weight: 400; /* grosor normal */
+    color: #555; /* gris */
+    text-shadow: none; /* sin sombra */
+}
+.modal-content img {
+    width: 100%; /* ocupa todo el ancho */
+    height: 300px; /* altura fija */
+    object-fit: cover; /* ajusta imagen sin deformar */
+    border-radius: 10px; /* bordes redondeados */
+}
+/* boton modal */
+.modal button {
+    margin: 10px; /* espacio externo */
+    padding: 10px; /* espacio interno */
+    border: none; /* sin borde */
+    background: #ff4d6d; /* color fondo */
+    color: white; /* texto blanco */
+    border-radius: 8px; /* bordes redondeados */
+    cursor: pointer; /* cursor tipo mano */
+    transition: 0.3s; /* animación suave */
+}
+.modal button:hover {
+    background: #e63b5c; /* cambio de color al pasar el mouse */
+}
+
+/* Quitar flechitas nativas en Chrome, Safari, Edge y Firefox */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Contenedor tipo píldora */
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 50px; 
+    overflow: hidden;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn-control {
+    background: none;
+    width: 40px;
+    border: none;
+    color: #ff4d6d;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-control:hover {
+    background-color: #fff0f3;
+}
+
+#cantidad-oferta {
+    width: 40px;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    outline: none;
+    background: transparent;
+}
+/* cerrar modal */
+.cerrar {
+    position: absolute; /* posición absoluta dentro del modal */
+    top: 5px; /* separación desde arriba */
+    right: 15px; /* separación desde la derecha */
+    font-size: 22px; /* tamaño del icono */
+    font-weight: bold; /* negrita */
+    cursor: pointer; /* cursor tipo mano */
+}
+/* animacion modal */
+@keyframes aparecer {
+    from {
+        transform: scale(0.8); /* inicia más pequeño */
+        opacity: 0; /* invisible */
+    }
+    to {
+        transform: scale(1); /* tamaño normal */
+        opacity: 1; /* visible */
+    }
+}

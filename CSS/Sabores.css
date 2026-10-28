@@ -1,0 +1,148 @@
+body {
+    margin: 2px;
+    font-family: Helvetica;
+    background-color: #fff5f7;
+    font-style: italic;
+}
+
+/* HERO */
+.imagenPrincipal {
+    height: 50vh;
+    background: url('../Imagenes/Gallery/Helado_portada.jpg.webp') no-repeat center center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    border-radius: 10px;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.contenido h1 {
+    color: #ff4d6d;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    border-radius: 10px;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* PRODUCTOS */
+.productos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+    width: 300px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    border-radius: 20px;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* IMAGEN */
+.img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+/* HOVER IMAGEN */
+.card:hover img {
+    opacity: 0.3;
+    transform: scale(1.1);
+}
+
+/* BOTÓN + */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 50px;
+    height: 50px;
+    background: red;
+    color: white;
+    font-size: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* MOSTRAR + */
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* TEXTO */
+.card h3 {
+    margin-top: 10px;
+    color: #000000;
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-shadow: none;
+    font-size: 20px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* FOOTER */
+.footer-simple {
+    background-color: #ff4d6d;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: Georgia, serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-socials a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
